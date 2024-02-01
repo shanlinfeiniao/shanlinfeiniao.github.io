@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://www.shanl.in</id>
+    <title>山林飞鸟的教程</title>
+    <updated>2024-02-01T07:22:51.234Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://www.shanl.in"/>
+    <link rel="self" href="https://www.shanl.in/atom.xml"/>
+    <logo>https://www.shanl.in/images/avatar.png</logo>
+    <icon>https://www.shanl.in/favicon.ico</icon>
+    <rights>All rights reserved 2024, 山林飞鸟的教程</rights>
+    <entry>
+        <title type="html"><![CDATA[Unidays验证教程]]></title>
+        <id>https://www.shanl.in/post/unidays/</id>
+        <link href="https://www.shanl.in/post/unidays/">
+        </link>
+        <updated>2024-01-08T07:57:46.000Z</updated>
+        <content type="html"><![CDATA[<p>1、首先确定要激活学生账号的区域，计划在哪个国家的apple store购买设备。<br>
+打开 <a href="https://www.myunidays.com/CN/zh-CN/account/confirm-region">unidays国别选择页面</a>（这里需要修改地区为你所在的地区，也可能自动跳转，为了阅读方便，本文以中国大陆为例，<strong>但请注意，本店无中国大陆unidays验证激活，因此，此处必须修改成你所在区域</strong><br>
+<img src="https://www.shanl.in/post-images/1704701747700.png" alt="" loading="lazy"></p>
+<p>2、创建unidays账号，使用自己的邮箱，新建密码进行注册。并前往邮箱验证unidays账号<br>
+<img src="https://www.shanl.in/post-images/1704701938035.png" alt="" loading="lazy"></p>
+<p>3、验证完成后会自动跳转到教育验证页面，如果没完成跳转，也可以自行打开此链接 <a href="https://www.myunidays.com/CN/zh-CN/account/wayf">https://www.myunidays.com/CN/zh-CN/account/wayf</a>，如果使用此链接 务必修改地区<br>
+<img src="https://www.shanl.in/post-images/1704702208463.png" alt="" loading="lazy"></p>
+<p>4、姓名可以随意填写，所在区域的正常姓名即可，性别随意，学习年份与课程长度合理即可。<strong>机构请联系卖家获取</strong><br>
+<img src="https://www.shanl.in/post-images/1704702368918.png" alt="" loading="lazy"></p>
+<p>5、<strong>邮箱联系卖家获取</strong><br>
+<img src="https://www.shanl.in/post-images/1704702441750.png" alt="" loading="lazy"></p>
+<p>6、打开卖家提供的验证链接完成激活。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于本店]]></title>
+        <id>https://www.shanl.in/post/guan-yu-ben-dian/</id>
+        <link href="https://www.shanl.in/post/guan-yu-ben-dian/">
+        </link>
+        <updated>2023-12-25T04:11:05.000Z</updated>
+        <content type="html"><![CDATA[<p>8年前暑假，我和女友一起去青海湖，一周时间几乎花光了一个学期的生活费，等到最后一个月，银行卡还剩几十块，东拼西凑不够100块，没办法取钱充饭卡，得搞点钱花，于是开始折腾。倒也不是真那么穷，找家里要钱或者找女朋友要钱都没问题，单纯脸皮薄。</p>
+<p>最开始跟风进厂，做了半天后意识到，打工是不可能打工的。</p>
+<p>后来在某个网站看到白嫖office的教程，于是去百度贴吧卖office365授权，一个一块，需要安装协助的加钱，后来开了淘宝店，就做到现在。<br>
+<img src="https://www.shanl.in/post-images/1703478194961.png" alt="" loading="lazy"></p>
+<p>佛系卖家，经常放几天批量发货，也懒得找客户要好评，正经买家谁主动评价啊，就算评价也肯定是吐槽，能确认收货就不错了。马马虎虎做到现在，总算累计9000多好评（虽然大部分是默认）<br>
+<img src="https://www.shanl.in/post-images/1703479220629.png" alt="" loading="lazy"></p>
+<p>顺便一提，本人中医专业，学了一点点代码，可惜技艺不精，比如这个教程的网站搭建和MarkDown用法是现学现用的23333<br>
+有需要中医调理建议的话也可以戳戳卖家。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[jetbrains 续期教程]]></title>
+        <id>https://www.shanl.in/post/xuqi/</id>
+        <link href="https://www.shanl.in/post/xuqi/">
+        </link>
+        <updated>2023-12-25T03:22:32.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="获取续期链接">获取续期链接</h3>
+<p>jet续期有两个入口<br>
+入口1、打开jet注册邮箱，在到期前半个月会有一封续期邮件 标题为，点击 &quot;use this link&quot; 进入续期页面表<br>
+<img src="https://www.shanl.in/post-images/1703474941128.png" alt="" loading="lazy"><br>
+入口2、打开jet个人账号链接 https://account.jetbrains.com/  在到期前半个月 会出现renew license，点进去进入续期页面表。<br>
+<img src="https://www.shanl.in/post-images/1703475013841.png" alt="" loading="lazy"></p>
+<h3 id="获取续期邮箱地址">获取续期邮箱地址</h3>
+<p>截图续期页面，并复制邮箱地址给老板<br>
+<img src="https://www.shanl.in/post-images/1703475109206.png" alt="" loading="lazy"></p>
+<h3 id="提交申请">提交申请</h3>
+<p>老板会登录检查邮箱是否可用，如果邮箱可用，下滑点 apply free products<br>
+如果不可用，会发给你新的邮箱，替换邮箱后提交</p>
+<h3 id="激活">激活</h3>
+<p>打开转发给你的邮件链接 登录jet账号完成激活</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Jet注册教程]]></title>
+        <id>https://www.shanl.in/post/zhuce/</id>
+        <link href="https://www.shanl.in/post/zhuce/">
+        </link>
+        <updated>2023-12-25T02:48:28.000Z</updated>
+        <content type="html"><![CDATA[<p>打开jet注册链接(https://account.jetbrains.com/login)输入邮箱进行注册</p>
+<p>打开邮箱激活链接后如图</p>
+<figure data-type="image" tabindex="1"><img src="https://www.shanl.in/post-images/1703473210872.png" alt="" loading="lazy"></figure>
+<p>输入密码完成注册即可</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[JetBrains申请教程 (首次购买用户使用）]]></title>
+        <id>https://www.shanl.in/post/shenqing/</id>
+        <link href="https://www.shanl.in/post/shenqing/">
+        </link>
+        <updated>2023-12-25T02:40:43.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="准备工作">准备工作</h3>
+<p>1、需要新建jet账号 也可使用已有的账号，要求jet账号状态正常，未曾停用授权。(更推荐新注册账号，以避免其他影响因素，请注册时使用中文的姓和名，用户名使用英文)。<br>
+<a href="https://www.shanl.in/post/zhuce">这里是一个简要的注册教程</a></p>
+<h3 id="前往申请">前往申请</h3>
+<p>打开jet的申请注册链接 https://www.jetbrains.com/community/education/<br>
+下滑大约一个页面 点击apply 如图<br>
+<img src="https://www.shanl.in/post-images/1703474156157.png" alt="" loading="lazy"></p>
+<h3 id="填写申请表">填写申请表</h3>
+<p>其中姓名与jet注册账号一致 地区选台湾 邮箱请与卖家联系，勾选中间那个选项框。完成后点击提交即可。<br>
+<img src="https://www.shanl.in/post-images/1703474377773.png" alt="" loading="lazy"><br>
+提交后跟老板说一声，打开老板转发给你的邮件链接即可激活。</p>
+<p><strong>商品提供一年质保，期间有问题请与本人联系</strong></p>
+]]></content>
+    </entry>
+</feed>
