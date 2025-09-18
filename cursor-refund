@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>日期区间天数计算器</title>
+  <style>
+    :root {
+      --bg: #0f172a; /* slate-900 */
+      --card: #111827; /* gray-900 */
+      --text: #e5e7eb; /* gray-200 */
+      --muted: #9ca3af; /* gray-400 */
+      --brand: #38bdf8; /* sky-400 */
+      --accent: #a78bfa; /* violet-400 */
+      --danger: #f87171; /* red-400 */
+      --ok: #34d399; /* emerald-400 */
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(56,189,248,.2), transparent),
+                  radial-gradient(1000px 600px at 120% 20%, rgba(167,139,250,.18), transparent),
+                  var(--bg);
+      color: var(--text);
+      display: grid; place-items: center; padding: 24px;
+    }
+    .wrap {
+      width: 100%; max-width: 860px; background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border: 1px solid rgba(255,255,255,.08); border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,.35);
+      padding: clamp(16px, 3vw, 28px);
+    }
+    h1 { margin: 0 0 6px; font-size: clamp(20px, 2.8vw, 30px); letter-spacing: .2px; }
+    p.lead { margin: 0 0 18px; color: var(--muted); font-size: 14px; }
+
+    .grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width: 720px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+    label { font-size: 13px; color: var(--muted); display: block; margin: 6px 0 6px; }
+    input[type="date"] {
+      width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.12);
+      background: #0b1220; color: var(--text); outline: none; font-size: 15px; 
+      transition: border-color .2s, box-shadow .2s;
+    }
+    input[type="date"]:focus { border-color: var(--brand); box-shadow: 0 0 0 4px rgba(56,189,248,.15); }
+
+    .row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+    .btn {
+      appearance: none; border: 1px solid rgba(255,255,255,.12); background: #0b1220; color: var(--text);
+      padding: 10px 14px; border-radius: 12px; font-size: 14px; cursor: pointer; transition: transform .05s ease, border-color .2s;
+    }
+    .btn:hover { border-color: var(--accent); }
+    .btn:active { transform: translateY(1px); }
+
+    .switch {
+      display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--muted);
+      user-select: none; cursor: pointer;
+    }
+    .switch input { width: 18px; height: 18px; }
+
+    .result {
+      margin-top: 16px; padding: 16px; border-radius: 14px; border: 1px dashed rgba(255,255,255,.16);
+      display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+      background: linear-gradient(180deg, rgba(56,189,248,.08), rgba(167,139,250,.06));
+    }
+    .result .days { font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: .5px; }
+    .result .meta { color: var(--muted); font-size: 13px; }
+
+    .msg { margin-top: 10px; font-size: 14px; }
+    .msg.ok { color: var(--ok); }
+    .msg.err { color: var(--danger); }
+
+    footer { margin-top: 18px; font-size: 12px; color: var(--muted); }
+    code { background: rgba(255,255,255,.06); padding: 2px 6px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main" aria-labelledby="title">
+    <h1 id="title">日期区间天数计算器</h1>
+    <p class="lead">允许选择范围：<strong>2025-04-20</strong> 至 <strong>2026-12-31</strong>。选择两个日期，自动计算相隔天数（可切换“是否包含起止日”）。</p>
+
+    <section class="grid" aria-describedby="helper">
+      <div>
+        <label for="start">开始日期（最早 2025-04-20）</label>
+        <input id="start" name="start" type="date" min="2025-04-20" max="2026-12-31" />
+      </div>
+      <div>
+        <label for="end">结束日期（最晚 2026-12-31）</label>
+        <input id="end" name="end" type="date" min="2025-04-20" max="2026-12-31" />
+      </div>
+    </section>
+
+    <div class="row" style="margin-top:12px">
+      <label class="switch" title="按需开启：把起止两天也算在内">
+        <input type="checkbox" id="inclusive" /> 包含起止日（含首末日）
+      </label>
+      <button class="btn" id="swapBtn" aria-label="交换开始与结束日期">↔ 交换</button>
+      <button class="btn" id="clearBtn" aria-label="清空日期">清空</button>
+    </div>
+
+    <div class="result" role="status" aria-live="polite" aria-atomic="true">
+      <div class="days" id="days">—</div>
+      <div>
+        <div class="meta" id="detail">请先选择两个日期</div>
+        <div class="msg" id="message"></div>
+      </div>
+    </div>
+
+    <footer id="helper">提示：为避免时区/夏令时偏差，计算基于 <code>UTC</code> 日历日差；结果对“天数”是精确的。</footer>
+  </main>
+
+  <script>
+    (function() {
+      const MIN = "2025-04-20";
+      const MAX = "2026-12-31";
+      const msPerDay = 24 * 60 * 60 * 1000;
+
+      const startEl = document.getElementById('start');
+      const endEl = document.getElementById('end');
+      const inclusiveEl = document.getElementById('inclusive');
+      const daysEl = document.getElementById('days');
+      const detailEl = document.getElementById('detail');
+      const msgEl = document.getElementById('message');
+      const swapBtn = document.getElementById('swapBtn');
+      const clearBtn = document.getElementById('clearBtn');
+
+      // 设置默认值（可按需调整为无默认）
+      // startEl.value = MIN;
+      // endEl.value = "2025-04-21";
+
+      function ymdParts(s) {
+        // s: 'YYYY-MM-DD' -> [y,m,d]
+        const [y, m, d] = s.split('-').map(Number);
+        return [y, m, d];
+      }
+      function toUTCmidnight(s) {
+        const [y, m, d] = ymdParts(s);
+        return Date.UTC(y, m - 1, d);
+      }
+      function inRange(s) {
+        return s >= MIN && s <= MAX;
+      }
+      function compute() {
+        msgEl.textContent = '';
+        const s = startEl.value;
+        const e = endEl.value;
+        if (!s || !e) {
+          daysEl.textContent = '—';
+          detailEl.textContent = '请先选择两个日期';
+          msgEl.className = 'msg';
+          return;
+        }
+        if (!inRange(s) || !inRange(e)) {
+          daysEl.textContent = '×';
+          detailEl.textContent = '超出允许范围（2025-04-20 至 2026-12-31）。';
+          msgEl.className = 'msg err';
+          msgEl.textContent = '请将日期限制在指定区间内。';
+          return;
+        }
+        if (e < s) {
+          daysEl.textContent = '×';
+          detailEl.textContent = '结束日期早于开始日期。';
+          msgEl.className = 'msg err';
+          msgEl.textContent = '可点击“交换”按钮自动调整。';
+          return;
+        }
+        const diff = Math.floor((toUTCmidnight(e) - toUTCmidnight(s)) / msPerDay);
+        const inclusive = inclusiveEl.checked;
+        const days = inclusive ? diff + 1 : diff;
+
+        daysEl.textContent = isFinite(days) ? String(days) : '—';
+        detailEl.textContent = `${s} 至 ${e}，${inclusive ? '含首末日' : '不含首末日'} 共 ${days} 天。`;
+        msgEl.className = 'msg ok';
+        msgEl.textContent = days >= 0 ? '计算成功' : '';
+      }
+
+      function swap() {
+        const s = startEl.value, e = endEl.value;
+        if (s && e) {
+          startEl.value = e;
+          endEl.value = s;
+          compute();
+        }
+      }
+      function clearAll() {
+        startEl.value = '';
+        endEl.value = '';
+        daysEl.textContent = '—';
+        detailEl.textContent = '请先选择两个日期';
+        msgEl.className = 'msg';
+        msgEl.textContent = '';
+      }
+
+      startEl.addEventListener('change', compute);
+      endEl.addEventListener('change', compute);
+      inclusiveEl.addEventListener('change', compute);
+      swapBtn.addEventListener('click', swap);
+      clearBtn.addEventListener('click', clearAll);
+
+      // 初次渲染
+      compute();
+    })();
+  </script>
+</body>
+</html>
