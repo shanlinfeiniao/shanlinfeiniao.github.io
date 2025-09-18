@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>日期区间天数计算器</title>
+  <title>日期区间天数 & 退款计算器</title>
   <style>
     :root {
       --bg: #0f172a; /* slate-900 */
@@ -14,6 +14,7 @@
       --accent: #a78bfa; /* violet-400 */
       --danger: #f87171; /* red-400 */
       --ok: #34d399; /* emerald-400 */
+      --warn: #f59e0b; /* amber-500 */
     }
     * { box-sizing: border-box; }
     html, body { height: 100%; }
@@ -26,7 +27,7 @@
       display: grid; place-items: center; padding: 24px;
     }
     .wrap {
-      width: 100%; max-width: 860px; background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      width: 100%; max-width: 960px; background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
       border: 1px solid rgba(255,255,255,.08); border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,.35);
       padding: clamp(16px, 3vw, 28px);
     }
@@ -34,15 +35,15 @@
     p.lead { margin: 0 0 18px; color: var(--muted); font-size: 14px; }
 
     .grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
-    @media (min-width: 720px) { .grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 780px) { .grid { grid-template-columns: 1fr 1fr; } }
 
     label { font-size: 13px; color: var(--muted); display: block; margin: 6px 0 6px; }
-    input[type="date"] {
+    input[type="date"], input[type="number"] {
       width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.12);
       background: #0b1220; color: var(--text); outline: none; font-size: 15px; 
       transition: border-color .2s, box-shadow .2s;
     }
-    input[type="date"]:focus { border-color: var(--brand); box-shadow: 0 0 0 4px rgba(56,189,248,.15); }
+    input[type="date"]:focus, input[type="number"]:focus { border-color: var(--brand); box-shadow: 0 0 0 4px rgba(56,189,248,.15); }
 
     .row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 
@@ -59,17 +60,26 @@
     }
     .switch input { width: 18px; height: 18px; }
 
-    .result {
+    .card {
       margin-top: 16px; padding: 16px; border-radius: 14px; border: 1px dashed rgba(255,255,255,.16);
-      display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
       background: linear-gradient(180deg, rgba(56,189,248,.08), rgba(167,139,250,.06));
+    }
+    .result {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
     }
     .result .days { font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: .5px; }
     .result .meta { color: var(--muted); font-size: 13px; }
 
-    .msg { margin-top: 10px; font-size: 14px; }
+    .msg { margin-top: 8px; font-size: 14px; }
     .msg.ok { color: var(--ok); }
     .msg.err { color: var(--danger); }
+    .msg.warn { color: var(--warn); }
+
+    .kv { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 8px; }
+    @media (min-width: 640px) { .kv { grid-template-columns: 1.2fr 1fr 1fr; } }
+
+    .list { margin: 10px 0 0; padding-left: 18px; font-size: 14px; color: var(--text); }
+    .list li { margin: 6px 0; }
 
     footer { margin-top: 18px; font-size: 12px; color: var(--muted); }
     code { background: rgba(255,255,255,.06); padding: 2px 6px; border-radius: 6px; }
@@ -77,9 +87,10 @@
 </head>
 <body>
   <main class="wrap" role="main" aria-labelledby="title">
-    <h1 id="title">日期区间天数计算器</h1>
-    <p class="lead">允许选择范围：<strong>2025-04-20</strong> 至 <strong>2026-12-31</strong>。选择两个日期，自动计算相隔天数（可切换“是否包含起止日”）。</p>
+    <h1 id="title">日期区间天数 & 退款计算器</h1>
+    <p class="lead">允许日期范围：<strong>2025-04-20</strong> 至 <strong>2026-12-31</strong>。先选择日期，再填写购买价格，系统将按规则计算质保天数、缺失天数与应退款金额。</p>
 
+    <!-- 日期选择 -->
     <section class="grid" aria-describedby="helper">
       <div>
         <label for="start">开始日期（最早 2025-04-20）</label>
@@ -99,15 +110,72 @@
       <button class="btn" id="clearBtn" aria-label="清空日期">清空</button>
     </div>
 
-    <div class="result" role="status" aria-live="polite" aria-atomic="true">
-      <div class="days" id="days">—</div>
-      <div>
-        <div class="meta" id="detail">请先选择两个日期</div>
-        <div class="msg" id="message"></div>
+    <section class="card" role="status" aria-live="polite" aria-atomic="true">
+      <div class="result">
+        <div class="days" id="days">—</div>
+        <div>
+          <div class="meta" id="detail">请选择两个日期</div>
+          <div class="msg" id="dateMsg"></div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <footer id="helper">提示：为避免时区/夏令时偏差，计算基于 <code>UTC</code> 日历日差；结果对“天数”是精确的。</footer>
+    <!-- 价格与退款计算 -->
+    <section class="card">
+      <h2 style="margin:0 0 8px;font-size:18px">购买与退款计算</h2>
+      <div class="grid">
+        <div>
+          <label for="priceRmb">Cursor 购买价格（RMB，0–500）</label>
+          <input id="priceRmb" name="priceRmb" type="number" inputmode="decimal" min="0" max="500" step="0.01" placeholder="例如 199" />
+        </div>
+        <div>
+          <label>折算美元（固定汇率 1 美元 = 7 RMB）</label>
+          <input id="priceUsd" type="text" readonly aria-readonly="true" />
+        </div>
+      </div>
+
+      <ul class="list" aria-label="计算明细">
+        <li>质保天数 = （美元价格 ÷ 20） × 30，<em>并四舍五入到整天</em>。</li>
+        <li>缺失天数 = 质保天数 − 实际天数（来自上方日期选择）。</li>
+        <li>应退款金额（理论值）= （缺失天数 ÷ 30） × 20 × 7（单位：RMB）。
+          <br><span style="color:var(--muted)">注：若计算结果为负，表示“无退款（或需补差）”。下方同时给出“建议退款金额（不小于 0）”。</span>
+        </li>
+      </ul>
+
+      <div class="kv">
+        <div>
+          <label>质保天数（天）</label>
+          <input id="warrantyDays" type="text" readonly aria-readonly="true" />
+        </div>
+        <div>
+          <label>缺失天数（天）</label>
+          <input id="missingDays" type="text" readonly aria-readonly="true" />
+        </div>
+        <div>
+          <label>应退款金额（RMB，理论值）</label>
+          <input id="refundRaw" type="text" readonly aria-readonly="true" />
+        </div>
+      </div>
+
+      <div class="kv">
+        <div>
+          <label>建议退款金额（RMB，负值按 0 计）</label>
+          <input id="refundClamped" type="text" readonly aria-readonly="true" />
+        </div>
+        <div>
+          <label>状态</label>
+          <input id="financeState" type="text" readonly aria-readonly="true" />
+        </div>
+      </div>
+
+      <div class="msg" id="priceMsg"></div>
+    </section>
+
+    <footer id="helper">计算规则：
+      1) 日期差基于 <code>UTC</code> 的自然日，避免时区/夏令时偏差；
+      2) 汇率固定按 <code>1 USD = 7 RMB</code>；
+      3) 质保天数四舍五入到整天，再参与缺失天数与退款计算。
+    </footer>
   </main>
 
   <script>
@@ -115,22 +183,29 @@
       const MIN = "2025-04-20";
       const MAX = "2026-12-31";
       const msPerDay = 24 * 60 * 60 * 1000;
+      const RMB_PER_USD = 7; // 固定汇率
 
+      // 日期元素
       const startEl = document.getElementById('start');
       const endEl = document.getElementById('end');
       const inclusiveEl = document.getElementById('inclusive');
       const daysEl = document.getElementById('days');
       const detailEl = document.getElementById('detail');
-      const msgEl = document.getElementById('message');
+      const dateMsgEl = document.getElementById('dateMsg');
       const swapBtn = document.getElementById('swapBtn');
       const clearBtn = document.getElementById('clearBtn');
 
-      // 设置默认值（可按需调整为无默认）
-      // startEl.value = MIN;
-      // endEl.value = "2025-04-21";
+      // 财务元素
+      const priceRmbEl = document.getElementById('priceRmb');
+      const priceUsdEl = document.getElementById('priceUsd');
+      const warrantyDaysEl = document.getElementById('warrantyDays');
+      const missingDaysEl = document.getElementById('missingDays');
+      const refundRawEl = document.getElementById('refundRaw');
+      const refundClampedEl = document.getElementById('refundClamped');
+      const financeStateEl = document.getElementById('financeState');
+      const priceMsgEl = document.getElementById('priceMsg');
 
       function ymdParts(s) {
-        // s: 'YYYY-MM-DD' -> [y,m,d]
         const [y, m, d] = s.split('-').map(Number);
         return [y, m, d];
       }
@@ -141,38 +216,107 @@
       function inRange(s) {
         return s >= MIN && s <= MAX;
       }
-      function compute() {
-        msgEl.textContent = '';
+      function formatMoney(n) { return isFinite(n) ? Number(n).toFixed(2) : '—'; }
+      function formatInt(n) { return Number.isFinite(n) ? String(Math.round(n)) : '—'; }
+
+      function computeDates() {
+        dateMsgEl.textContent = '';
         const s = startEl.value;
         const e = endEl.value;
+
         if (!s || !e) {
           daysEl.textContent = '—';
-          detailEl.textContent = '请先选择两个日期';
-          msgEl.className = 'msg';
-          return;
+          detailEl.textContent = '请选择两个日期';
+          dateMsgEl.className = 'msg';
+          return { ok: false, actualDays: NaN };
         }
         if (!inRange(s) || !inRange(e)) {
           daysEl.textContent = '×';
           detailEl.textContent = '超出允许范围（2025-04-20 至 2026-12-31）。';
-          msgEl.className = 'msg err';
-          msgEl.textContent = '请将日期限制在指定区间内。';
-          return;
+          dateMsgEl.className = 'msg err';
+          dateMsgEl.textContent = '请将日期限制在指定区间内。';
+          return { ok: false, actualDays: NaN };
         }
         if (e < s) {
           daysEl.textContent = '×';
           detailEl.textContent = '结束日期早于开始日期。';
-          msgEl.className = 'msg err';
-          msgEl.textContent = '可点击“交换”按钮自动调整。';
-          return;
+          dateMsgEl.className = 'msg err';
+          dateMsgEl.textContent = '可点击“交换”按钮自动调整。';
+          return { ok: false, actualDays: NaN };
         }
         const diff = Math.floor((toUTCmidnight(e) - toUTCmidnight(s)) / msPerDay);
         const inclusive = inclusiveEl.checked;
-        const days = inclusive ? diff + 1 : diff;
+        const actualDays = inclusive ? diff + 1 : diff;
 
-        daysEl.textContent = isFinite(days) ? String(days) : '—';
-        detailEl.textContent = `${s} 至 ${e}，${inclusive ? '含首末日' : '不含首末日'} 共 ${days} 天。`;
-        msgEl.className = 'msg ok';
-        msgEl.textContent = days >= 0 ? '计算成功' : '';
+        daysEl.textContent = isFinite(actualDays) ? String(actualDays) : '—';
+        detailEl.textContent = `${s} 至 ${e}，${inclusive ? '含首末日' : '不含首末日'} 共 ${actualDays} 天。`;
+        dateMsgEl.className = 'msg ok';
+        dateMsgEl.textContent = '日期计算成功';
+        return { ok: true, actualDays };
+      }
+
+      function computeFinance(actualDays) {
+        // 校验价格输入
+        let rmb = parseFloat(priceRmbEl.value);
+        if (Number.isNaN(rmb)) {
+          priceUsdEl.value = '';
+          warrantyDaysEl.value = '';
+          missingDaysEl.value = '';
+          refundRawEl.value = '';
+          refundClampedEl.value = '';
+          financeStateEl.value = '';
+          priceMsgEl.className = 'msg';
+          priceMsgEl.textContent = '请输入 Cursor 购买价格（RMB，0–500）。';
+          return;
+        }
+        if (rmb < 0 || rmb > 500) {
+          priceMsgEl.className = 'msg err';
+          priceMsgEl.textContent = '价格需在 0–500 RMB 范围内。';
+          rmb = Math.min(500, Math.max(0, rmb));
+        } else {
+          priceMsgEl.className = 'msg ok';
+          priceMsgEl.textContent = '价格已输入。';
+        }
+
+        const usd = rmb / RMB_PER_USD; // 按 1 USD = 7 RMB 折算
+        priceUsdEl.value = `$ ${formatMoney(usd)}`;
+
+        // 质保天数（四舍五入到整天）
+        const warrantyDaysRaw = (usd / 20) * 30;
+        const warrantyDays = Math.round(warrantyDaysRaw);
+        warrantyDaysEl.value = formatInt(warrantyDays);
+
+        // 只有当“实际天数”有效时，计算缺失与退款
+        if (!Number.isFinite(actualDays)) {
+          missingDaysEl.value = '—';
+          refundRawEl.value = '—';
+          refundClampedEl.value = '—';
+          financeStateEl.value = '请先完成日期选择';
+          return;
+        }
+
+        const missingDays = warrantyDays - actualDays; // 质保 - 实际
+        missingDaysEl.value = formatInt(missingDays);
+
+        const refundRawRmb = (missingDays / 30) * 20 * 7; // 理论值，可为负
+        refundRawEl.value = `¥ ${formatMoney(refundRawRmb)}`;
+
+        const refundClamped = Math.max(0, refundRawRmb);
+        refundClampedEl.value = `¥ ${formatMoney(refundClamped)}`;
+
+        // 状态提示
+        if (refundRawRmb > 0) {
+          financeStateEl.value = '可退款';
+        } else if (refundRawRmb === 0) {
+          financeStateEl.value = '不退款';
+        } else {
+          financeStateEl.value = '无退款（质保已不足/需补差）';
+        }
+      }
+
+      function computeAll() {
+        const { ok, actualDays } = computeDates();
+        computeFinance(ok ? actualDays : NaN);
       }
 
       function swap() {
@@ -180,26 +324,38 @@
         if (s && e) {
           startEl.value = e;
           endEl.value = s;
-          compute();
+          computeAll();
         }
       }
       function clearAll() {
         startEl.value = '';
         endEl.value = '';
+        inclusiveEl.checked = false;
         daysEl.textContent = '—';
-        detailEl.textContent = '请先选择两个日期';
-        msgEl.className = 'msg';
-        msgEl.textContent = '';
+        detailEl.textContent = '请选择两个日期';
+        dateMsgEl.className = 'msg';
+        dateMsgEl.textContent = '';
+
+        priceRmbEl.value = '';
+        priceUsdEl.value = '';
+        warrantyDaysEl.value = '';
+        missingDaysEl.value = '';
+        refundRawEl.value = '';
+        refundClampedEl.value = '';
+        financeStateEl.value = '';
+        priceMsgEl.className = 'msg';
+        priceMsgEl.textContent = '';
       }
 
-      startEl.addEventListener('change', compute);
-      endEl.addEventListener('change', compute);
-      inclusiveEl.addEventListener('change', compute);
+      startEl.addEventListener('change', computeAll);
+      endEl.addEventListener('change', computeAll);
+      inclusiveEl.addEventListener('change', computeAll);
+      priceRmbEl.addEventListener('input', computeAll);
       swapBtn.addEventListener('click', swap);
       clearBtn.addEventListener('click', clearAll);
 
       // 初次渲染
-      compute();
+      computeAll();
     })();
   </script>
 </body>
