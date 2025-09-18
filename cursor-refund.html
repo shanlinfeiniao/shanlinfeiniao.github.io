@@ -46,28 +46,8 @@
     input[type="date"]:focus, input[type="number"]:focus { border-color: var(--brand); box-shadow: 0 0 0 4px rgba(56,189,248,.15); }
     input:disabled { opacity: .7; cursor: not-allowed; }
 
-    .row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-
-    .btn {
-      appearance: none; border: 1px solid rgba(255,255,255,.12); background: #0b1220; color: var(--text);
-      padding: 10px 14px; border-radius: 12px; font-size: 14px; cursor: pointer; transition: transform .05s ease, border-color .2s;
-    }
-    .btn:hover { border-color: var(--accent); }
-    .btn:active { transform: translateY(1px); }
-
-    .switch {
-      display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--muted);
-      user-select: none; cursor: pointer;
-    }
-    .switch input { width: 18px; height: 18px; }
-
-    .card {
-      margin-top: 16px; padding: 16px; border-radius: 14px; border: 1px dashed rgba(255,255,255,.16);
-      background: linear-gradient(180deg, rgba(56,189,248,.08), rgba(167,139,250,.06));
-    }
-    .result {
-      display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-    }
+    .card { margin-top: 16px; padding: 16px; border-radius: 14px; border: 1px dashed rgba(255,255,255,.16); background: linear-gradient(180deg, rgba(56,189,248,.08), rgba(167,139,250,.06)); }
+    .result { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
     .result .days { font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: .5px; }
     .result .meta { color: var(--muted); font-size: 13px; }
 
@@ -92,14 +72,14 @@
 <body>
   <main class="wrap" role="main" aria-labelledby="title">
     <h1 id="title">日期区间天数 & 退款计算器（结束日期自动为今日）</h1>
-    <p class="lead">允许日期范围：<strong>2025-04-20</strong> 至 <strong>2026-12-31</strong>。请选择购买时间；结束日期将自动设为您访问本页面的当天（若超出范围会自动使用最近的边界日期）。</p>
+    <p class="lead">允许日期范围：<strong>2025年4月20日</strong> 至 <strong>2026年12月31日</strong>。请选择购买时间；结束日期将自动设为您访问本页面的当天。</p>
 
     <details>
       <summary>使用说明与原理（点此展开）</summary>
       <ul class="list">
         <li><strong>购买时间</strong>：请选择您购买 Cursor 的日期（需在允许范围内）。</li>
-        <li><strong>结束日期</strong>：自动取您访问本页面当日（本地时间）的日期；若超出 <code>2025-04-20 ~ 2026-12-31</code>，将按最近的边界值计算。</li>
-        <li><strong>实际天数</strong>：两日期相差的自然日天数（可切换“含首末日”）；计算基于 <code>UTC</code>，避免时区/夏令时误差。</li>
+        <li><strong>结束日期</strong>：自动取您访问本页面当日（本地时间）的日期。</li>
+        <li><strong>实际天数</strong>：两日期相差的自然日天数（默认<strong>不</strong>包含起止日，即不含首末日）；计算基于 <code>UTC</code>，避免时区/夏令时误差。</li>
         <li><strong>价格换算</strong>：输入 RMB（0–500），按固定汇率 <code>1 USD = 7 RMB</code> 换算美元。</li>
         <li><strong>质保天数</strong>：按公式 <code>(美元 ÷ 20) × 30</code> 计算，并四舍五入到整数天。</li>
         <li><strong>缺失天数</strong>：<code>质保天数 − 实际天数</code>。</li>
@@ -110,28 +90,20 @@
     <!-- 日期选择 -->
     <section class="grid" aria-describedby="helper">
       <div>
-        <label for="start">购买时间（最早 2025-04-20）</label>
-        <input id="start" name="start" type="date" min="2025-04-20" max="2026-12-31" />
+        <label for="start">购买时间（最早 2025年4月20日）</label>
+        <input id="start" name="start" type="date" min="2025-04-20" max="2026-12-31" lang="zh-CN" />
       </div>
       <div>
         <label for="end">结束日期（自动设为今日，无法编辑）</label>
-        <input id="end" name="end" type="date" min="2025-04-20" max="2026-12-31" placeholder="自动填入今日" disabled />
+        <input id="end" name="end" type="date" min="2025-04-20" max="2026-12-31" placeholder="自动填入今日" disabled lang="zh-CN" />
       </div>
     </section>
-
-    <div class="row" style="margin-top:12px">
-      <label class="switch" title="按需开启：把起止两天也算在内">
-        <input type="checkbox" id="inclusive" /> 包含起止日（含首末日）
-      </label>
-      <button class="btn" id="swapBtn" aria-label="交换购买与结束日期" disabled title="结束日期为今日，无法交换">↔ 交换</button>
-      <button class="btn" id="clearBtn" aria-label="清空日期">清空</button>
-    </div>
 
     <section class="card" role="status" aria-live="polite" aria-atomic="true">
       <div class="result">
         <div>
           <div class="days" id="days">—</div>
-          <div style="font-size:13px;color:var(--muted);margin-top:4px">↑ 实际天数（基于所选购买时间与今日）</div>
+          <div style="font-size:13px;color:var(--muted);margin-top:4px">↑ 实际天数（基于购买时间与今日，不含起止日）</div>
         </div>
         <div>
           <div class="meta" id="detail">请选择购买时间</div>
@@ -209,11 +181,9 @@
       // 日期元素
       const startEl = document.getElementById('start');
       const endEl = document.getElementById('end');
-      const inclusiveEl = document.getElementById('inclusive');
       const daysEl = document.getElementById('days');
       const detailEl = document.getElementById('detail');
       const dateMsgEl = document.getElementById('dateMsg');
-      const clearBtn = document.getElementById('clearBtn');
 
       // 财务元素
       const priceRmbEl = document.getElementById('priceRmb');
@@ -238,6 +208,11 @@
         const d = String(t.getDate()).padStart(2, '0');
         return `${y}-${m}-${d}`;
       }
+      function toZh(ymd) {
+        if (!ymd || ymd.indexOf('-') === -1) return ymd || '';
+        const [y, m, d] = ymd.split('-').map(Number);
+        return `${y}年${m}月${d}日`;
+      }
       function updateTodayEnd() {
         const ymd = clampDate(todayYMD());
         endEl.value = ymd;
@@ -251,31 +226,30 @@
 
         if (!s) {
           daysEl.textContent = '—';
-          detailEl.textContent = `请选择购买时间；结束日期已自动设为 ${e}`;
+          detailEl.textContent = `请选择购买时间；结束日期已自动设为 ${toZh(e)}`;
           dateMsgEl.className = 'msg';
           return { ok: false, actualDays: NaN };
         }
         if (!inRange(s)) {
           daysEl.textContent = '×';
-          detailEl.textContent = '购买时间超出允许范围（2025-04-20 至 2026-12-31）。';
+          detailEl.textContent = '购买时间超出允许范围（2025年4月20日至2026年12月31日）。';
           dateMsgEl.className = 'msg err';
           dateMsgEl.textContent = '请将日期限制在指定区间内。';
           return { ok: false, actualDays: NaN };
         }
         if (e < s) {
           daysEl.textContent = '×';
-          detailEl.textContent = `今日（${e}）早于购买时间（${s}）。`;
+          detailEl.textContent = `今日（${toZh(e)}）早于购买时间（${toZh(s)}）。`;
           dateMsgEl.className = 'msg warn';
           dateMsgEl.textContent = '若购买时间在未来，将无法计算有效间隔。';
           return { ok: false, actualDays: NaN };
         }
 
         const diff = Math.floor((toUTCmidnight(e) - toUTCmidnight(s)) / msPerDay);
-        const inclusive = inclusiveEl.checked;
-        const actualDays = inclusive ? diff + 1 : diff;
+        const actualDays = diff; // 默认不包含起止日
 
         daysEl.textContent = isFinite(actualDays) ? String(actualDays) : '—';
-        detailEl.textContent = `${s} 至 ${e}（${inclusive ? '含首末日' : '不含首末日'}）共 ${actualDays} 天。`;
+        detailEl.textContent = `${toZh(s)} 至 ${toZh(e)}（不含首末日）共 ${actualDays} 天。`;
         dateMsgEl.className = 'msg ok';
         dateMsgEl.textContent = '日期计算成功（结束日期为今日）';
         return { ok: true, actualDays };
@@ -303,12 +277,11 @@
           priceMsgEl.textContent = '价格已输入。';
         }
 
-        const usd = rmb / RMB_PER_USD; // 按 1 USD = 7 RMB 折算
+        const usd = rmb / 7; // 按 1 USD = 7 RMB 折算
         priceUsdEl.value = `$ ${formatMoney(usd)}`;
 
-        // 质保天数（四舍五入到整天）
-        const warrantyDaysRaw = (usd / 20) * 30;
-        const warrantyDays = Math.round(warrantyDaysRaw);
+        const warrantyDaysRaw = (usd / 20) * 30; // 质保天数（原始）
+        const warrantyDays = Math.round(warrantyDaysRaw); // 四舍五入到整天
         warrantyDaysEl.value = formatInt(warrantyDays);
 
         if (!Number.isFinite(actualDays)) {
@@ -342,39 +315,14 @@
         computeFinance(ok ? actualDays : NaN);
       }
 
-      function clearAll() {
-        startEl.value = '';
-        inclusiveEl.checked = false;
-        updateTodayEnd();
-
-        daysEl.textContent = '—';
-        detailEl.textContent = '请选择购买时间';
-        dateMsgEl.className = 'msg';
-        dateMsgEl.textContent = '';
-
-        priceRmbEl.value = '';
-        priceUsdEl.value = '';
-        warrantyDaysEl.value = '';
-        missingDaysEl.value = '';
-        refundRawEl.value = '';
-        refundClampedEl.value = '';
-        financeStateEl.value = '';
-        priceMsgEl.className = 'msg';
-        priceMsgEl.textContent = '';
-      }
-
       // 事件绑定
-            // 在聚焦时若为空，自动定位到最小日期，避免选择到“全灰月份”
       startEl.addEventListener('focus', () => { if (!startEl.value) startEl.value = MIN; });
       startEl.addEventListener('change', computeAll);
-      inclusiveEl.addEventListener('change', computeAll);
       priceRmbEl.addEventListener('input', computeAll);
-      clearBtn.addEventListener('click', clearAll);
 
-      // 初次渲染：设置今日为结束日期
-            // 初次渲染：设置今日为结束日期，并将购买时间预填为允许范围起点，避免出现月份可选但日期全灰的情况
-      updateTodayEnd();
-      // 若购买时间为空，预设为最小可选日，方便直接点选日期
+      // 初次渲染：设置今日为结束日期，并将购买时间预填为允许范围起点，避免出现月份可选但日期全灰的情况
+      const todayClamped = (function(){ const t = new Date(); const y= t.getFullYear(); const m= String(t.getMonth()+1).padStart(2,'0'); const d= String(t.getDate()).padStart(2,'0'); return `${y}-${m}-${d}`; })();
+      endEl.value = (todayClamped < MIN ? MIN : (todayClamped > MAX ? MAX : todayClamped));
       if (!startEl.value) startEl.value = MIN;
       computeAll();
     })();
