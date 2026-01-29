@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://www.shanl.in</id>
+    <title>山林飞鸟的教程</title>
+    <updated>2026-01-29T01:29:39.632Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://www.shanl.in"/>
+    <link rel="self" href="https://www.shanl.in/atom.xml"/>
+    <subtitle>欢迎添加闲聊群 &lt;a href=&quot;https://t.me/+zQMChaTU34I2MzQ9&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;https://t.me/+zQMChaTU34I2MzQ9&lt;/a&gt; 后续有商品活动/优惠会在群里发布！</subtitle>
+    <logo>https://www.shanl.in/images/avatar.png</logo>
+    <icon>https://www.shanl.in/favicon.ico</icon>
+    <rights>All rights reserved 2026, 山林飞鸟的教程</rights>
+    <entry>
+        <title type="html"><![CDATA[google 养号技巧]]></title>
+        <id>https://www.shanl.in/post/google-yanghao/</id>
+        <link href="https://www.shanl.in/post/google-yanghao/">
+        </link>
+        <updated>2026-01-27T10:19:30.000Z</updated>
+        <content type="html"><![CDATA[<p>很多时候有谷歌账号 但是因为种种原因（ip质量 账号活跃度 浏览器指纹等等） 账号没有验证资格导致无法验证。这里先给出有无资格的判定方法：打开链接<br>
+https://one.google.com/u/0/ai?g1_landing_page=75<br>
+如果存在折扣 类似<br>
+<img src="https://www.shanl.in/post-images/1769603600532.png" alt="" loading="lazy"><br>
+则判定有资格，如果类似<br>
+<img src="https://www.shanl.in/post-images/1769603609591.png" alt="" loading="lazy"><br>
+显示原价，则判定没资格。<br>
+遇到没资格有两种办法，如果不是很着急，可以使用此教程的养号技巧，一般3-4天就能获取到验证资格。急用也可以先让卖家拉家庭组凑合用一下。（家庭组类似手机主卡/副卡，稳定性与主卡稳定性相关，我个人感觉不太行所以仅作为急用时免费提供 不对稳定性和额度做保证）</p>
+<p>养号需要ip和指纹浏览器，指纹浏览器个人推荐ads指纹浏览器 谷歌搜索即可找到下载链接，免费版本足够使用。 ip需要自备，推荐使用美国标记的ip<br>
+<img src="https://www.shanl.in/post-images/1769603624485.png" alt="" loading="lazy"><br>
+避免使用标记为中国的ip  以及没有地区显示的ip 具体检查入口等可以参考这个教程最后面<br>
+https://www.shanl.in/post/gemini<br>
+原则上 使用谷歌认为的地区和ip检查的地区一致的均可，但更推荐美国ip<br>
+指纹浏览器是一种可以让浏览器指纹看起来是正常的方式。举例而言，你在中国使用浏览器访问谷歌，谷歌发现浏览器的语言 时区 甚至地理位置在中国，但是使用的却是美国的ip 很容易将账号判定为风险账号或者机器账号 进而不提供优惠资格。指纹浏览器可以避免这个问题。<br>
+之后是指纹浏览器，正常下载安装指纹浏览器后，<br>
+<img src="https://www.shanl.in/post-images/1769510313966.png" alt="" loading="lazy"><br>
+点右上角新建浏览器，之后配置ip<br>
+<img src="https://www.shanl.in/post-images/1769510843643.png" alt="" loading="lazy"><br>
+完成后点最下面保存<br>
+之后启动此浏览器<br>
+<img src="https://www.shanl.in/post-images/1769510938323.png" alt="" loading="lazy"><br>
+确保ip下面的地区在美国<br>
+<img src="https://www.shanl.in/post-images/1769511786104.png" alt="" loading="lazy"><br>
+打开gmail.com 没事刷一下 保持三天登录 通常就有验证资格了。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Google注册技巧]]></title>
+        <id>https://www.shanl.in/post/google/</id>
+        <link href="https://www.shanl.in/post/google/">
+        </link>
+        <updated>2026-01-01T06:49:48.000Z</updated>
+        <content type="html"><![CDATA[<p>首先本文仅仅是注册技巧，并非完整的注册教程，适用于有一定技巧的人。<br>
+0 注册难度<br>
+经验上，苹果移动设备（ipad iPhone）的注册难度最低，安卓手机次之，电脑注册难度最高。<br>
+三种情况均应使用美国ip注册，这样注册完成后可以直接申请1年免费的教育版验证，无需再次切换ip 避免注册后立即换ip导致账号不稳定。  检测是否为美国ip只有一种方式：参考教程最后面<br>
+https://www.shanl.in/post/gemini<br>
+如果没有谷歌账号可以直接使用美国ip访问gemini官网看有无报错（官网地址 gemini.google.com）<br>
+0.1 所有发送 接收短信均应使用个人能长期使用的号码，不要使用虚拟号码或者接码网站的号码，避免因为虚拟号码失效导致无法登陆。<br>
+0.1.1 发送短信失败，可以尝试在号码前添加 “+”再发送<br>
+0.2 强烈建议注册完成后开启两步验证 把能加的验证方式都加进去</p>
+<p>1 苹果设备注册要点<br>
+均需要使用谷歌系app注册，这种注册方式不需要发送短信，仅提交手机号后接收短信即可，而且对ip质量要求不高。需要有外区apple id用于从应用商店下载谷歌系app（据说国区也有gmail？）。<br>
+2 安卓移动设备注册要点<br>
+均需要使用谷歌系app注册，安卓设备顺利注册需要发送一条短信到指定号码，这个过程要求谷歌框架完整 有效，至少要保证手机在可访问谷歌的基础上，能正常使用play store等谷歌基础框架功能。<br>
+大概率需要发送短信到境外，请检查收件号码是否正常 完整，此外部分报错由于运营商（如移动）默认关闭向境外发送短信的功能，需要咨询运营商开通。<br>
+3 电脑注册要点<br>
+电脑注册记得使用高质量的住宅ip，且100%需要手机扫码发送短信（既然要手机 为什么不直接使用手机注册还能容易点？）同样需要完整的谷歌框架。<br>
+如果2和3搞不定，可以尝试试用美国ip+有谷歌框架的安卓模拟器进行安装，比如https://www.bluestacks.com/</p>
+<p>注意！！新注册的账号很容易被封，一定要多加小心：至少15天不能改密码 不能新登录设备，尽量不要换ip，15天后进行上述操作也要小心，不能短时间登录多个设备 或者多次换ip等等。但是 15天内要正常活跃，不能直接登出放15天<br>
+为了避免异地登陆 新注册的账号强烈推荐使用验证链接激活，仅验证链接无法获取, 再给账号密码交由老板验证。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[figma的验证教程]]></title>
+        <id>https://www.shanl.in/post/figma/</id>
+        <link href="https://www.shanl.in/post/figma/">
+        </link>
+        <updated>2025-10-28T13:03:55.000Z</updated>
+        <content type="html"><![CDATA[<p>在验证完成figma后，大部分情况可以直接使用，少数情况需要进行账号免费升级。<br>
+使用浏览器打开figma.com 登录账号后 点击如图所示的free按钮<br>
+<img src="https://www.shanl.in/post-images/1761656714050.png" alt="" loading="lazy"><br>
+之后点击免费升级按钮<br>
+<img src="https://www.shanl.in/post-images/1761656732399.png" alt="" loading="lazy"><br>
+最后勾选同意<br>
+<img src="https://www.shanl.in/post-images/1761656745475.png" alt="" loading="lazy"><br>
+就完成升级了</p>
+<hr>
+<p>如果使用谷歌登录 需要设置figma的独立密码，可以参考如下方式<br>
+使用浏览器打开figma.com 如果已经登录需要退出登录<br>
+进入figma的登录页面 点重置密码如图<br>
+<img src="https://www.shanl.in/post-images/1761788840842.png" alt="" loading="lazy"><br>
+输入注册邮箱后提交<br>
+<img src="https://www.shanl.in/post-images/1761788869981.png" alt="" loading="lazy"><br>
+之后前往邮箱检查重置密码的邮件即可</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[cursor验证教程]]></title>
+        <id>https://www.shanl.in/post/cursor/</id>
+        <link href="https://www.shanl.in/post/cursor/">
+        </link>
+        <updated>2025-05-07T16:17:21.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>Edu 邮箱与 Cursor Pro 教育优惠安全使用指南</strong></p>
+<p>以下所有步骤均为确保 edu 邮箱安全有效，避免后续出现翻车问题。</p>
+<hr>
+<h2 id="一-邮箱登录与安全操作">一、邮箱登录与安全操作</h2>
+<ol>
+<li>
+<p><strong>登陆 IP 要求</strong></p>
+<p>推荐使用住宅ip登录 比如台湾ip等</p>
+</li>
+<li>
+<p><strong>密码修改须知</strong></p>
+</li>
+</ol>
+<p>学校限定修改密码必须使用学校的电脑，相当于<strong>无法改密码</strong> ，原理上只有本店老板和购买人知道邮箱密码（脚本新鲜跑的，密码是学校根据生日自动生成的），cursor密码不受影响。</p>
+<hr>
+<hr>
+<h2 id="二-github-绑定推荐">二、GitHub 绑定（推荐）</h2>
+<p>推荐使用 edu 邮箱注册 GitHub 账号，这样可以用 GitHub 登录 Cursor，进一步避免邮箱无法访问导致无法访问账户。<br>
+如果已经有github账号 也可以直接绑定到自己的账号上 （https://github.com/settings/emails）</p>
+<ol>
+<li>注册 <a href="https://github.com/">GitHub</a> 账号时，使用 edu 邮箱进行注册。</li>
+<li>登录 GitHub 后，绑定自己的常用邮箱作为备用邮箱。</li>
+<li>在 GitHub 账号设置里启用「两步验证」，确保账号安全，即使密码泄露他人也无法登录。</li>
+<li>完成上述安全设置后，等待数日再修改 edu 邮箱密码。</li>
+</ol>
+<hr>
+<h2 id="四-cursor-账号订阅升级流程必须">四、Cursor 账号订阅升级流程（必须）</h2>
+<p>在确认完成上述所有安全设置后，按如下步骤升级 Cursor Pro 账号：</p>
+<ol>
+<li>
+<p>使用 edu 邮箱登录 Cursor 官网，进入账户页面。</p>
+</li>
+<li>
+<p>点击「升级 Pro」按钮，如图所示：</p>
+<figure data-type="image" tabindex="1"><img src="https://www.shanl.in/post-images/1746635491071.png" alt="Cursor 升级 Pro 按钮截图" loading="lazy"></figure>
+<ul>
+<li>订阅页面会显示订阅金额为 $0：</li>
+</ul>
+</li>
+</ol>
+<figure data-type="image" tabindex="2"><img src="https://www.shanl.in/post-images/1746635532407.png" alt="Cursor 订阅金额显示截图" loading="lazy"></figure>
+<ol start="3">
+<li>
+<p>建议将订阅类型调整为「年付」。</p>
+</li>
+<li>
+<p>完成订阅流程后绑定支付方式推荐使用信用卡+随便找一个美国地址，支付宝太大陆了。</p>
+</li>
+</ol>
+<hr>
+<h2 id="五-交付周期说明">五、交付周期说明</h2>
+<ul>
+<li>卖家按东八区作息，当天会完成当天的订单 急用勿拍！</li>
+<li>若遇订单过多，可能会临时下架商品避免订单积压。若未找到商品，建议稍后刷新或直接联系卖家，卖家会及时通知商品重新上架。</li>
+</ul>
+<hr>
+<h2 id="六-质保与风险提示">六、质保与风险提示</h2>
+<ul>
+<li>本次 Cursor 教育优惠为首次推出，具体翻车风险尚不明确。</li>
+<li>为控制风险，本商品仅提供<strong>一个月质保</strong>：（按每天10单计算，一年将近40w 如果质保一年，未来某一天突然全部失效，得产生40w的退款，你可以自行估计店铺有没有能力承担这么大范围的亏损，反正我不行 所以我只有一个月质保）</li>
+<li>当然 更大的可能性是，cursor拉到了风投，为了完成风投对用户增量的要求，进一步放松对学生优惠的审核，参考gemini</li>
+<li>一个月内若 cursor 取消免费学生订阅，可免费重新验证或全额退款。</li>
+<li>若您为轻度用户或尝鲜用户，建议试用一段时间看看稳定性。</li>
+<li>Cursor Pro 理论可使用一年。</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Gemini验证教程]]></title>
+        <id>https://www.shanl.in/post/gemini/</id>
+        <link href="https://www.shanl.in/post/gemini/">
+        </link>
+        <updated>2025-04-28T08:39:32.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>重要！使用此教程前请诚心默念：谷歌大善人，有钱大撒币！</strong><br>
+（也就谷歌让大家白嫖 你看看隔壁claude和gpt）<br>
+诚心默念可提高通过概率！</p>
+<p><strong>由于其他地区的优惠已经结束，现在只能使用美国地区的ip获取验证链接！</strong></p>
+<p>请自行更换到美国ip位置！验证后可以使用非大陆非港澳ip进行访问<br>
+前期准备：<br>
+1     使用美国ip打开 gemini.google.com 检查能否正常进入gemini的问答页面，如果无法进入，说明ip存在错误/账号异常。跳至教程最后面有判断ip的方法。<br>
+2     资格判断，打开https://one.google.com/u/0/about/plans?hl=en-US&amp;g1_landing_page=0 检查有无折扣，如果有折扣大概率可以白嫖一年，如果没有则大概率账号没有验证资格。</p>
+<p>首先要有谷歌账号，并且能正常访问申请页面（申请地址 https://gemini.google/students/  打不开的话用 https://one.google.com/ai-student）推荐使用电脑打开 方便操作<br>
+如图 进入后 鼠标<strong>右键</strong>点击畅享学生优惠的蓝色按钮，<strong>选择复制链接</strong>  <strong>不要直接点进去！！</strong><br>
+<img src="https://www.shanl.in/post-images/1766334135759.png" alt="" loading="lazy"><br>
+进入后 鼠标<strong>右键</strong>点击畅享学生优惠的蓝色按钮，<strong>选择复制链接</strong>  <strong>不要直接点进去！！</strong><br>
+<strong>如果使用微信等聊天软件中转发送链接，一定要在复制后，在文本编辑器里，对连接的com前加一个空格，然后发送，避免微信等聊天软件自动打开链接</strong><br>
+将复制的链接发给卖家链接网址开头为  https://services.sheerid.com/verify/<br>
+（不慎打开会提高失败概率 虽然可以重新获取但还是麻烦 ）<br>
+发送此链接给卖家，卖家会完成验证，验证后页面类似下图<br>
+<img src="https://www.shanl.in/post-images/1756175676860.png" alt="" loading="lazy"><br>
+点击按钮进入订阅页面，如图<br>
+<img src="https://www.shanl.in/post-images/1756434450640.png" alt="" loading="lazy"><br>
+点蓝色按钮进行订阅（部分情况下 这个页面会有报错错误，比如没有验证资格 不显示12个月等字样，伴有按钮无法点击/点击后没反应  遇到了同浏览器打开这个链接 https://one.google.com/ai-student?g1_landing_page=75&amp;utm_source=antigravity&amp;utm_campaign=argon_limit_reached ）<br>
+订阅页面需要填写信用卡信息和支付地址/信用卡地址 ，输入信息进行绑定<br>
+信用卡可以用国内的双币卡 也可以用虚拟卡进行验证，推荐使用自己的 没有也可以滴滴老板提供（<strong>教程中的卡失效了 抄进去没用</strong>），<strong>地址一定要用美国地址</strong>，没有的话可以用，下面这个。<br>
+名字Alexander Valverde<br>
+地址1040 N Venetian Dr<br>
+城市Miami Beach<br>
+洲Florida<br>
+邮政编码33139<br>
+国家United States<br>
+<img src="https://www.shanl.in/post-images/1763804850477.png" alt="" loading="lazy"><br>
+<strong>教程里的卡失效了  仅仅是示例 不要用！！</strong><br>
+<img src="https://www.shanl.in/post-images/1763804860493.png" alt="" loading="lazy"><br>
+<img src="https://www.shanl.in/post-images/1763804865963.png" alt="" loading="lazy"><br>
+<img src="https://www.shanl.in/post-images/1763804873538.png" alt="" loading="lazy"><br>
+使用自己的卡要记得取消订阅，避免来年被谷歌扣费，在这里完成取消<br>
+https://myaccount.google.com/u/0/payments-and-subscriptions?utm_source=OGB&amp;utm_medium=app</p>
+<hr>
+<hr>
+<p>如果申请页面提示国家/年龄不符合要求，或者没有相关订阅，类似下图，<strong>玄学问题</strong><br>
+<img src="https://www.shanl.in/post-images/1745830241974.png" alt="" loading="lazy"><br>
+可以尝试以下操作：<br>
+1 关闭支付资料<br>
+https://payments.google.com/gp/w/home/settings<br>
+打开以上链接付款中心下拉底部关闭付款资料<br>
+<img src="https://www.shanl.in/post-images/1767001980538.png" alt="" loading="lazy"><br>
+点击后通常会要求再进行一次身份验证，类似登陆的时候。关闭后重新进入https://payments.google.com/gp/w/home/settings确保相关内容完全关闭<br>
+然后再次打开https://one.google.com/ai-student</p>
+<p>2 使用美国ip<br>
+3 换号<br>
+4 新注册（可以参考这个教程 https://www.shanl.in/post/google）<br>
+5 检查账号地区    https://policies.google.com/country-association-form?hl=en-TW&amp;fg=1<br>
+7 检查年龄是不是大于18岁，要求年龄必须大于18-28（如果没有验证年龄 尝试进行验证 ）<br>
+8 https://gemini.google.com/gems/create?hl=en-US&amp;pli=1 打开这个链接 随便添加一个名字保存</p>
+<p>tips：如何判断ip的位置<br>
+很多ip看起来是在美国 台湾 新加坡等非大陆地区，但很多时候，由于谷歌对ip地址的综合判定（可以了解一个关键词 “送中”），导致谷歌认为ip在中国大陆。因此，会出现访问实际是中国的情况。<br>
+类似下图<br>
+<img src="https://www.shanl.in/post-images/1764494219996.png" alt="" loading="lazy"></p>
+<p>点进去可以看到ip和归属地<br>
+<img src="https://www.shanl.in/post-images/1764606599138.png" alt="" loading="lazy"><br>
+居然会有标记为中国的ip 但显然中国大陆无法访问谷歌。说明存在额外的判定机制导致ip被谷歌判定为中国。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[亚马逊学生优惠激活教程]]></title>
+        <id>https://www.shanl.in/post/amazon/</id>
+        <link href="https://www.shanl.in/post/amazon/">
+        </link>
+        <updated>2025-03-10T12:10:27.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>注意事项1</strong> 要有对应国家的亚马逊账号，需要绑定信用卡，需要没用过学生优惠。如果任意一项不满足，请联系卖家申请退款。<br>
+<strong>注意事项2</strong> 激活后会有半年免费+三年半价续期的prime会员，免费会员权益相对较少，但常规的prime价和prime配送是有的，其他不确定，请自行确认。免费会员到期后会自动从信用卡扣除prime会员的费用，因此如果仅计划白嫖，请设置日历提醒避免扣费。</p>
+<p><strong>激活步骤：</strong><br>
+这里以英亚为例 其他国家大差不差<br>
+1 使用浏览器打开亚马逊官网（App无法进入申请页面），在官网搜索框使用<strong>当地语言</strong>搜索 学生会员，此处我们是英国区域 因此使用关键词 student prime<br>
+<img src="https://www.shanl.in/post-images/1741614893931.png" alt="" loading="lazy"><br>
+如果还是不行 使用当地语言谷歌搜索 amazon+地区+student prime<br>
+2 点击后进入申请页面<br>
+<img src="https://www.shanl.in/post-images/1741615280508.jpg" alt="" loading="lazy"><br>
+3 点击填写表格 其中邮箱 预期毕业时间联系卖家获取<br>
+<img src="https://www.shanl.in/post-images/1741615295376.jpg" alt="" loading="lazy"><br>
+4 提交后通知卖家  留言邮箱地址，卖家转发激活邮件，打开激活链接完成验证。</p>
+<p>其他国家流程接近，仅日本稍有差异。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Apple Music学生激活教程]]></title>
+        <id>https://www.shanl.in/post/applemusic/</id>
+        <link href="https://www.shanl.in/post/applemusic/">
+        </link>
+        <updated>2025-01-18T15:14:20.000Z</updated>
+        <content type="html"><![CDATA[<ol start="0">
+<li>由于apple music存在一些变动 加上缺乏足够的测试（不同环境和设备下表现是否一致），因此本教程/商品有概率无法激活，如果未完成激活，截图未完成的地方可以全额退款。</li>
+<li>设备：本激活<strong>不需要</strong>提供apple id账号密码，但目前要求有iPhone设备，并安装apple music的App。已知在iPhone13 18.1.1的香港地区激活完成。 其他设备/版本/地区未测试，后续将在教程中补充。 理论上，非大陆的iPhone都应能够顺利激活(已知ipad不行）。</li>
+<li>在移动设备上安装apple music后，点击右上角个人  <img src="https://www.shanl.in/post-images/1737214505547.jpg" alt="" loading="lazy"></li>
+<li>进入订阅管理<img src="https://www.shanl.in/post-images/1737214706981.jpg" alt="" loading="lazy"></li>
+<li>选择学生订阅，点击下面的验证学生订阅（续期是这样，如果是首次订阅可能稍有不同）<img src="https://www.shanl.in/post-images/1737214838820.jpg" alt="" loading="lazy"></li>
+<li>选择 已透过unidays完成<img src="https://www.shanl.in/post-images/1737214992857.jpg" alt="" loading="lazy"></li>
+<li>在弹出的页面中 登录卖家提供的unidays账号密码<img src="https://www.shanl.in/post-images/1737215250469.jpg" alt="" loading="lazy"></li>
+<li>完成如下<img src="https://www.shanl.in/post-images/1737215282686.jpg" alt="" loading="lazy"></li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Unidays使用教程]]></title>
+        <id>https://www.shanl.in/post/unidays-shiyong/</id>
+        <link href="https://www.shanl.in/post/unidays-shiyong/">
+        </link>
+        <updated>2024-10-10T11:12:24.000Z</updated>
+        <content type="html"><![CDATA[<p>在这一步，你应当已经有了unidays账号密码 并且完成了激活 接下来使用这个教程进行购买，如果没有unidays，请与店家联系。如果需要激活apple music学生版 请参考这个教程 https://www.shanl.in/post/applemusic/<br>
+<strong>注意</strong> 由于不同区域的网站交互逻辑不同 但大概的填写内容是一致的，本教程仅适用于正常下单客户</p>
+<p>要确保下单成功，需要满足以下几个条件<br>
+1，人在unidays激活所对应的地址，<br>
+2a，有当地的收货地址<br>
+2b，如果区域允许自提，也可以线下自提，但要求能够流利使用当地语言<br>
+3，最好有当地货币的支付手段</p>
+<p>满足如下条件后，前往apple商店购买，购买填写资料应遵循 <strong>除了unidays外所有信息都使用自己的真实信息</strong><br>
+首先打开对应商店的链接，<br>
+日本链接为https://www.apple.com/jp-edu/store<br>
+新加坡 https://www.apple.com/sg-edu/store<br>
+台湾https://www.apple.com/tw-edu/store<br>
+马来https://www.apple.com/my-edu/store<br>
+韩国 https://www.apple.com/kr-edu/store</p>
+<p>这里以日本为例，打开后选择心仪的商品加入购物车<br>
+（学生季如果送笔或者键盘或者其他外设，需要将对应设备一并加入购物车）<br>
+之后打开购物车进行结算，在点击结算后出现如下弹窗<br>
+<img src="https://www.shanl.in/post-images/1728559624788.png" alt="" loading="lazy"><br>
+点击 查看unidays 进入unidays登录页<br>
+<img src="https://www.shanl.in/post-images/1738500831624.png" alt="" loading="lazy"><br>
+点击登录 输入邮箱 填写发送到邮箱的验证码后登录，稍等片刻会跳转到苹果商店中</p>
+<p><strong>至此，后续所有的信息都是用自己的信息</strong></p>
+<p>接下来会要求登录apple id 或者以访客模式购买，建议有当地apple id的用户选择登录id 我这里没有id 所以以访客模式进入<br>
+<img src="https://www.shanl.in/post-images/1728559940275.png" alt="" loading="lazy"></p>
+<p>之后填写收货地址 使用自己的邮箱 手机号 姓名 地址 信用卡信息等完成购买即可</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Dcard注册教程]]></title>
+        <id>https://www.shanl.in/post/dcard/</id>
+        <link href="https://www.shanl.in/post/dcard/">
+        </link>
+        <updated>2024-10-01T12:33:56.000Z</updated>
+        <content type="html"><![CDATA[<p>适用于win或mac<br>
+本教程适用于计划养号客户，本教程可以一定程度上降低账号被要求实名的概率 但并不能完全杜绝。<br>
+当然也可以使用自己的相关证件 如健保卡或者护照完成实名。</p>
+<p>如果预备使用多个账号，或者ip非台湾原生ip/住宅ip，则需要准备指纹浏览器（如ads hubstudio等）与住宅ip（如922 s5），若仅一个账号自用，则可忽略此要求。若之前对养号（例如tiktok fb等）比较熟悉，可以按习惯配置。</p>
+<p>首先配置好指纹浏览器代理 打开dcard.tw 点右上角登录<br>
+<img src="https://www.shanl.in/post-images/1727786766450.png" alt="" loading="lazy"></p>
+<p>使用hotmail或者gmail一类的邮箱，设置一个密码 点注册/登录dcard<br>
+<img src="https://www.shanl.in/post-images/1727786909646.png" alt="" loading="lazy"></p>
+<p>前往邮箱 点击激活链接<br>
+<img src="https://www.shanl.in/post-images/1727787062078.png" alt="" loading="lazy"></p>
+<p>输入基本信息，<strong>合理</strong>即可<br>
+<img src="https://www.shanl.in/post-images/1727787253340.png" alt="" loading="lazy"><br>
+输入完成后点击提交 然后不要在接下来的弹窗页面中填写任何信息 <strong>直接刷新</strong> 后点击右上角进入个人设置，或者点击链接https://www.dcard.tw/my/collections 进入个人主页</p>
+<p>点击页面的立即验证 进入教育邮箱验证页<br>
+<img src="https://www.shanl.in/post-images/1727787591191.png" alt="" loading="lazy"></p>
+<p>如果计划日后使用自己的信息进行实名 此处姓名应填写自己的实际姓名。如果不计划实名，所有信息合理即可。姓名需要使用繁体中文，看起来像是名字。 学校询问卖家，系所选择你喜欢的即可，填写卖家提供的邮箱。最后点击提交。<br>
+<img src="https://www.shanl.in/post-images/1727788264749.png" alt="" loading="lazy"></p>
+<p>之后向卖家要激活链接 然后同一个环境打开链接就完成激活了。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[planet申请教程]]></title>
+        <id>https://www.shanl.in/post/planet/</id>
+        <link href="https://www.shanl.in/post/planet/">
+        </link>
+        <updated>2024-09-09T14:38:55.000Z</updated>
+        <content type="html"><![CDATA[<p>由于planet是人工审核的，审核要求会更严格，因此一定要严格按照申请教程操作。<br>
+尽管申请没通过可以退款或者换号，但毕竟耽搁时间嘛。<br>
+<strong>核心</strong>：由于人工审核，因此要确保所有账号的<strong>前后一致</strong>，逻辑一致，不要有奇怪的地方。例如，学校是美国的学校，但留的地址在中国大陆，或者留的手机号是中国大陆。前后不一致就不会申请通过。<br>
+例如邮箱对应的学校在美国，应使用美国的ip，美国的手机号，美国的姓名格式（如果邮箱不包含姓名），使用chatgpt编一个合理的美国的科研项目。</p>
+<p>此外，收到激活链接后，还需要填写之前填写过的，<strong>前后一致</strong>的信息，因此，需要记录当时填写的信息。<br>
+比如这是一个打开激活链接后的页面，需要填写当时申请时用的手机号 姓名等信息 因此建议本地记录一下 避免到时候无法激活，或者刚激活就被封号。<br>
+<img src="https://www.shanl.in/post-images/1725896530780.png" alt="" loading="lazy"></p>
+<p>以下是范例 给出邮箱 daniel.cambron@utem.edu.my  打开申请地址https://www.planet.com/industries/education-and-research/<br>
+<img src="https://www.shanl.in/post-images/1725893871302.png" alt="" loading="lazy"><br>
+这个邮箱包含姓名，那么first name就是Daniel ，last name Cambron，学校邮箱daniel.cambron@utem.edu.my。<br>
+如果邮箱不包含姓名。比如40914248@tpcu.edu.tw，前面是学号。可以使用https://www.fakenamegenerator.com/  随机生成一个姓名组合。</p>
+<p>对于邮箱所在国家，可以直接谷歌检索邮箱@后面的部分判断，举例而言，<br>
+<img src="https://www.shanl.in/post-images/1725894081771.png" alt="" loading="lazy"><br>
+检索域名可以看到学校名称，进一步检索学校名称，可以看到所在国家。<br>
+这里看到这个邮箱对应国家在马来西亚。<br>
+之后打开谷歌地图 检索学校所在位置 获取邮编。<br>
+<img src="https://www.shanl.in/post-images/1725894311919.png" alt="" loading="lazy"><br>
+Jalan Hang Tuah Jaya, 76100 Durian Tunggal, Melaka, 馬來西亞<br>
+其中，76100就是邮编。</p>
+<p>Please provide a link to online content related to project (e.g. a past manuscript, project or web page), or if you don't have one, simply say &quot;not available&quot;*<br>
+这里没有项目 填not available</p>
+<p>Please provide a link to your university or department website*<br>
+这个位置同一填写学校的官网。我们在第一步谷歌检索那里已经看到了学校名称 进一步检索就能看到学校官网了。<br>
+<img src="https://www.shanl.in/post-images/1725894657883.png" alt="" loading="lazy"><br>
+打开就能看到网站，这里是https://www.utem.edu.my/</p>
+<p>Please provide a link to more on your background (e.g. researchgate profile, LinkedIn profile), or if you don't have one, simply say &quot;not available&quot;*<br>
+这里当然也是 not available<br>
+<img src="https://www.shanl.in/post-images/1725895037009.png" alt="" loading="lazy"></p>
+<p>后面的关于项目的表述 Describe the project you intend to investigate with Planet data. What questions do you hope to answer? Please include, when possible, some background on your research problem and a brief description of the methods you intend to use. Project description must be a minimum of 100 words.*</p>
+<p>Word Count 1 / 100<br>
+Project description must be a minimum of 100 words.<br>
+Describe the geography you plan to investigate.*<br>
+可以借用chatgpt完成  ai味别太浓就好 不过我不是相关专业人员，可能申请理由不如你们自己填得好 这一步就自行发挥。https://chatgpt.com/share/e7de2bbb-1db2-44a4-aefb-122bcfab5ee5 这里是我完成的 作为参考<br>
+最后这一步合理即可<img src="https://www.shanl.in/post-images/1725896191746.png" alt="" loading="lazy"></p>
+<p>最后给出完整的申请截图<br>
+<img src="https://www.shanl.in/post-images/1725896827275.png" alt="" loading="lazy"><br>
+<img src="https://www.shanl.in/post-images/1725896849250.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+</feed>
